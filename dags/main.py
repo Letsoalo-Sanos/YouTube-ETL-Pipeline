@@ -65,10 +65,10 @@ with DAG(
     update_staging = staging_table()
     update_core    = core_table()
 
-    # trigger_data_quality = TriggerDagRunOperator(
-    #     task_id='trigger_data_quality',
-    #     trigger_dag_id='data_quality',
-    # )
+    trigger_data_quality = TriggerDagRunOperator(
+         task_id='trigger_data_quality',
+         trigger_dag_id='data_quality',
+     )
 
     update_staging >> update_core
     # update_core >> trigger_data_quality  # uncomment in Section 6
